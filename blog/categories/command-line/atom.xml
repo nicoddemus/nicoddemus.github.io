@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: command-line | Midnight Coding]]></title>
+  <link href="http://nicoddemus.github.io/blog/categories/command-line/atom.xml" rel="self"/>
+  <link href="http://nicoddemus.github.io/"/>
+  <updated>2013-08-25T23:27:44+02:00</updated>
+  <id>http://nicoddemus.github.io/</id>
+  <author>
+    <name><![CDATA[Bruno Oliveira]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[clik: framework for command-line applications]]></title>
+    <link href="http://nicoddemus.github.io/blog/2013/08/25/clik-framework-for-command-line-applications/"/>
+    <updated>2013-08-25T22:03:00+02:00</updated>
+    <id>http://nicoddemus.github.io/blog/2013/08/25/clik-framework-for-command-line-applications</id>
+    <content type="html"><![CDATA[<p>While working on <a href="https://github.com/nicoddemus/cit">cit</a>, I decided that subcommand
+handling that was being done manually was too clumsy (specially after
+<a href="https://github.com/damianimc">Damiani</a> went on a flurry and added a ton of new commands).
+That&rsquo;s when I found out about this neat little
+framework for subcommand-style applications: <a href="https://github.com/jds/clik">clik</a>.</p>
+
+<p>You initially must construct an <code>App</code> object:</p>
+
+<p>``` python
+cit = clik.App(</p>
+
+<pre><code>name='cit',
+description='Command line tool for interacting with a Jenkins integration server.\n', 
+</code></pre>
+
+<p>)</p>
+
+<p>&hellip;</p>
+
+<p>if <strong>name</strong> == &lsquo;<strong>main</strong>&rsquo;:</p>
+
+<pre><code>cit.main()    
+</code></pre>
+
+<p>```</p>
+
+<p>Now with an app object on hand, you can use it as a decorator in any function you have,
+which then exposes that function in the command line as a subcommand of your application:</p>
+
+<p>``` python
+@cit(alias=&lsquo;fb.add&rsquo;, usage=&lsquo;[branch]&rsquo;)
+def feature_branch_add(&hellip;):</p>
+
+<pre><code> '''
+Create/Update jobs associated with the current git branch.
+
+This will create one or more jobs on jenkins for the current feature branch,
+or for the one given as parameter if one is provided.
+'''    
+</code></pre>
+
+<p>```</p>
+
+<p>By default the sub-command is named after the function itself, but you can pass an alias if you like
+(<code>feature_branch_add</code> is too long to type in the command line). The docstring is also parsed and
+the first line is used as a &ldquo;short help&rdquo;, while the rest is displayed when asking for more
+detailed help for a command:</p>
+
+<p>```
+$ cit
+cit &mdash; Command line tool for interacting with a Jenkins integration server.</p>
+
+<p>Basic usage: cit <subcommand> [options]</p>
+
+<p>feature_branch_add, fb.add</p>
+
+<pre><code>Create/Update jobs associated with the current git branch.
+</code></pre>
+
+<p>$ cit fb.add -h
+Usage: cit feature_branch_add|fb.add [branch]</p>
+
+<p>Create/Update jobs associated with the current git branch.</p>
+
+<p>Options:
+  -h, &mdash;help  show this help message and exit</p>
+
+<p>This will create one or more jobs on jenkins for the current feature branch,
+or for the one given as parameter if one is provided.
+```</p>
+
+<p>Neat stuff!</p>
+
+<p>Your subcommands may receive some predefined arguments, all you have to do is to declare
+the argument by name and <code>clik</code> will automatically inspect the function and pass
+the correct parameters:</p>
+
+<ul>
+<li><code>args</code>: List of arguments, not including application or command name.</li>
+<li><code>argv</code>: List of arguments including the command name.</li>
+<li><code>opts</code>: optparse.Values for the invocation.</li>
+<li><code>app</code>: The click.App running the subcommand.</li>
+<li><code>console</code>: clik.Console object.</li>
+<li><code>conf</code>: ConfigParser.ConfigParser instance. Will be empty if conf is not enabled.</li>
+<li><code>log</code>: logging.Logger instance for the application. Has no handlers (thus does &ldquo;nothing&rdquo;) if logging is not enabled.</li>
+</ul>
+
+
+<p>There&rsquo;s some really handy features available, like colored output, configuration handling, etc.
+You can also customize the parameters. In cit&rsquo;s case I added a few more parameters that
+subcommands can receive:</p>
+
+<ul>
+<li><code>job_config</code>: job configuration for the current repository.</li>
+<li><code>global_config</code>: global cit configuration.</li>
+<li><code>user_name</code>: current git user name.</li>
+<li><code>user_email</code>: current git user email.</li>
+<li><code>branch</code> : current git branch.</li>
+</ul>
+
+
+<p>Here&rsquo;s <code>fb.rm</code> making use of the custom parameters:</p>
+
+<p>``` python
+@cit(alias=&lsquo;fb.rm&rsquo;, usage=&lsquo;[branch]&rsquo;)
+def feature_branch_rm(branch, global_config):</p>
+
+<pre><code>'''
+Remove jobs associated with the current git branch.
+'''
+</code></pre>
+
+<p>```</p>
+
+<p>All in all, <code>clik</code> is a neat little library that greatly helps having to write a lot of
+boilerplate code for command line handling. Highly recommended!</p>
+
+<p><strong>Note</strong>: the above code is in a branch <code>better-command-line-handling</code>&hellip; it will
+be integrated in <code>master</code> this week (I think).</p>
+]]></content>
+  </entry>
+  
+</feed>
