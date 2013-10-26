@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Midnight Coding - script</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Midnight Coding  <strong>Sleeping is for the weak</strong></a></h1>
+                <nav><ul>
+                    <li><a href="/pages/projects/">Projects</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/category/python">Python</a></li>
+                </ul>
+                </nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/articles/clik">clik: framework for command-line applications</a></h1>
+<footer class="post-info">
+        <span>dom 25 agosto 2013</span>
+<span>| tags: <a href="/tag/command-line">command-line</a><a href="/tag/python">python</a><a href="/tag/script">script</a></span>
+</footer><!-- /.post-info --><p>While working on <a href="https://github.com/nicoddemus/cit">cit</a>, I decided that subcommand 
+handling that was being done manually was too clumsy (specially after 
+<a href="https://github.com/damianimc">Damiani</a> went on a flurry and added a ton of new commands). 
+That's when I found out about this neat little
+framework for subcommand-style applications: <a href="https://github.com/jds/clik">clik</a>.</p>
+<p>You initially must construct an <code>App</code> object:</p>
+<div class="highlight"><pre><span class="n">cit</span> <span class="o">=</span> <span class="n">clik</span><span class="o">.</span><span class="n">App</span><span class="p">(</span>
+    <span class="n">name</span><span class="o">=</span><span class="s">&#39;cit&#39;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="s">&#39;Command line tool for interacting with a Jenkins integration server.</span><span class="se">\n</span><span class="s">&#39;</span><span class="p">,</span> 
+<span class="p">)</span> 
+
+<span class="o">...</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">cit</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>    
+</pre></div>
+
+
+<p>Now with an app object on hand, you can use it as a decorator in any function you have, 
+which then exposes that function in the command line as a subcommand of your application:</p>
+<div class="highlight"><pre><span class="nd">@cit</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s">&#39;fb.add&#39;</span><span class="p">,</span> <span class="n">usage</span><span class="o">=</span><span class="s">&#39;[branch]&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">feature_branch_add</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+     <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Create/Update jobs associated with the current git branch.</span>
+
+<span class="sd">    This will create one or more jobs on jenkins for the current feature branch,</span>
+<span class="sd">    or for the one given as parameter if one is provided.</span>
+<span class="sd">    &#39;&#39;&#39;</span>    
+</pre></div>
+
+
+<p>By default the sub-command is named after the function itself, but you can pass an alias if you like
+(<code>feature_branch_add</code> is too long to type in the command line). The docstring is also parsed and
+the first line is used as a "short help", while the rest is displayed when asking for more
+detailed help for a command:</p>
+<div class="highlight"><pre><span class="nv">$ </span>cit
+cit -- Command line tool <span class="k">for </span>interacting with a Jenkins integration server.
+
+Basic usage: cit &lt;subcommand&gt; <span class="o">[</span>options<span class="o">]</span>
+
+feature_branch_add, fb.add
+    Create/Update <span class="nb">jobs </span>associated with the current git branch.
+
+<span class="nv">$ </span>cit fb.add -h
+Usage: cit feature_branch_add|fb.add <span class="o">[</span>branch<span class="o">]</span>
+
+Create/Update <span class="nb">jobs </span>associated with the current git branch.
+
+Options:
+  -h, --help  show this <span class="nb">help </span>message and <span class="nb">exit</span>
+
+This will create one or more <span class="nb">jobs </span>on jenkins <span class="k">for </span>the current feature branch,
+or <span class="k">for </span>the one given as parameter <span class="k">if </span>one is provided.
+</pre></div>
+
+
+<p>Neat stuff!</p>
+<p>Your subcommands may receive some predefined arguments, all you have to do is to declare
+the argument by name and <code>clik</code> will automatically inspect the function and pass
+the correct parameters:</p>
+<ul>
+<li><code>args</code>: List of arguments, not including application or command name.</li>
+<li><code>argv</code>: List of arguments including the command name.</li>
+<li><code>opts</code>: optparse.Values for the invocation.</li>
+<li><code>app</code>: The click.App running the subcommand.</li>
+<li><code>console</code>: clik.Console object.</li>
+<li><code>conf</code>: ConfigParser.ConfigParser instance. Will be empty if conf is not enabled.</li>
+<li><code>log</code>: logging.Logger instance for the application. Has no handlers (thus does "nothing") if logging is not enabled.</li>
+</ul>
+<p>There's some really handy features available, like colored output, configuration handling, etc.
+You can also customize the parameters. In cit's case I added a few more parameters that 
+subcommands can receive:</p>
+<ul>
+<li><code>job_config</code>: job configuration for the current repository.</li>
+<li><code>global_config</code>: global cit configuration.</li>
+<li><code>user_name</code>: current git user name.</li>
+<li><code>user_email</code>: current git user email. </li>
+<li><code>branch</code> : current git branch.</li>
+</ul>
+<p>Here's <code>fb.rm</code> making use of the custom parameters:</p>
+<div class="highlight"><pre><span class="nd">@cit</span><span class="p">(</span><span class="n">alias</span><span class="o">=</span><span class="s">&#39;fb.rm&#39;</span><span class="p">,</span> <span class="n">usage</span><span class="o">=</span><span class="s">&#39;[branch]&#39;</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">feature_branch_rm</span><span class="p">(</span><span class="n">branch</span><span class="p">,</span> <span class="n">global_config</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Remove jobs associated with the current git branch.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+</pre></div>
+
+
+<p>All in all, <code>clik</code> is a neat little library that greatly helps having to write a lot of 
+boilerplate code for command line handling. Highly recommended!</p>
+<p><strong>Note</strong>: the above code is in a branch <code>better-command-line-handling</code>... it will
+be integrated in <code>master</code> this week (I think).</p>                </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
+            </ol><!-- /#posts-list -->
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="https://github.com/nicoddemus">GitHub</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
