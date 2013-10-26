@@ -1,6 +1,7 @@
-Title: New blog! New Pelican-powered.
+Title: New blog! Now Pelican-powered.
 Date: 2013-10-26 17:30
 tags: general
+Category: General
 Summary: Moving the blog from Jekyll to Pelican
 
 I have moved from [Jekyll](http://jekyllrb.com) to [Pelican](http://docs.getpelican.com) as bloggin framework.
