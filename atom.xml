@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Midnight Coding</title><link href="http://nicoddemus.github.io/" rel="alternate"></link><link href="http://nicoddemus.github.io/atom.xml" rel="self"></link><id>http://nicoddemus.github.io/</id><updated>2013-08-25T22:03:00-03:00</updated><entry><title>clik: framework for command-line applications</title><link href="http://nicoddemus.github.io/articles/clik" rel="alternate"></link><updated>2013-08-25T22:03:00-03:00</updated><author><name>Bruno Oliveira</name></author><id>tag:nicoddemus.github.io,2013-08-25:articles/clik</id><summary type="html">&lt;p&gt;While working on &lt;a href="https://github.com/nicoddemus/cit"&gt;cit&lt;/a&gt;, I decided that subcommand 
+handling that was being done manually was too clumsy (specially after 
+&lt;a href="https://github.com/damianimc"&gt;Damiani&lt;/a&gt; went on a flurry and added a ton of new commands). 
+That's when I found out about this neat little
+framework for subcommand-style applications: &lt;a href="https://github.com/jds/clik"&gt;clik&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;You initially must construct an &lt;code&gt;App&lt;/code&gt; object:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cit&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clik&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;App&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+    &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;cit&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
+    &lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Command line tool for interacting with a Jenkins integration server.&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
+&lt;span class="p"&gt;)&lt;/span&gt; 
+
+&lt;span class="o"&gt;...&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;cit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;    
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now with an app object on hand, you can use it as a decorator in any function you have, 
+which then exposes that function in the command line as a subcommand of your application:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@cit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;alias&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;fb.add&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;usage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;[branch]&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;feature_branch_add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+     &lt;span class="sd"&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class="sd"&gt;    Create/Update jobs associated with the current git branch.&lt;/span&gt;
+
+&lt;span class="sd"&gt;    This will create one or more jobs on jenkins for the current feature branch,&lt;/span&gt;
+&lt;span class="sd"&gt;    or for the one given as parameter if one is provided.&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;    
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;By default the sub-command is named after the function itself, but you can pass an alias if you like
+(&lt;code&gt;feature_branch_add&lt;/code&gt; is too long to type in the command line). The docstring is also parsed and
+the first line is used as a "short help", while the rest is displayed when asking for more
+detailed help for a command:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nv"&gt;$ &lt;/span&gt;cit
+cit -- Command line tool &lt;span class="k"&gt;for &lt;/span&gt;interacting with a Jenkins integration server.
+
+Basic usage: cit &amp;lt;subcommand&amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;options&lt;span class="o"&gt;]&lt;/span&gt;
+
+feature_branch_add, fb.add
+    Create/Update &lt;span class="nb"&gt;jobs &lt;/span&gt;associated with the current git branch.
+
+&lt;span class="nv"&gt;$ &lt;/span&gt;cit fb.add -h
+Usage: cit feature_branch_add|fb.add &lt;span class="o"&gt;[&lt;/span&gt;branch&lt;span class="o"&gt;]&lt;/span&gt;
+
+Create/Update &lt;span class="nb"&gt;jobs &lt;/span&gt;associated with the current git branch.
+
+Options:
+  -h, --help  show this &lt;span class="nb"&gt;help &lt;/span&gt;message and &lt;span class="nb"&gt;exit&lt;/span&gt;
+
+This will create one or more &lt;span class="nb"&gt;jobs &lt;/span&gt;on jenkins &lt;span class="k"&gt;for &lt;/span&gt;the current feature branch,
+or &lt;span class="k"&gt;for &lt;/span&gt;the one given as parameter &lt;span class="k"&gt;if &lt;/span&gt;one is provided.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Neat stuff!&lt;/p&gt;
+&lt;p&gt;Your subcommands may receive some predefined arguments, all you have to do is to declare
+the argument by name and &lt;code&gt;clik&lt;/code&gt; will automatically inspect the function and pass
+the correct parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;args&lt;/code&gt;: List of arguments, not including application or command name.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;argv&lt;/code&gt;: List of arguments including the command name.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;opts&lt;/code&gt;: optparse.Values for the invocation.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;app&lt;/code&gt;: The click.App running the subcommand.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;console&lt;/code&gt;: clik.Console object.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;conf&lt;/code&gt;: ConfigParser.ConfigParser instance. Will be empty if conf is not enabled.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;log&lt;/code&gt;: logging.Logger instance for the application. Has no handlers (thus does "nothing") if logging is not enabled.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There's some really handy features available, like colored output, configuration handling, etc.
+You can also customize the parameters. In cit's case I added a few more parameters that 
+subcommands can receive:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;job_config&lt;/code&gt;: job configuration for the current repository.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;global_config&lt;/code&gt;: global cit configuration.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;user_name&lt;/code&gt;: current git user name.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;user_email&lt;/code&gt;: current git user email. &lt;/li&gt;
+&lt;li&gt;&lt;code&gt;branch&lt;/code&gt; : current git branch.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Here's &lt;code&gt;fb.rm&lt;/code&gt; making use of the custom parameters:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@cit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;alias&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;fb.rm&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;usage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;[branch]&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;feature_branch_rm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;branch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;global_config&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+    &lt;span class="sd"&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;span class="sd"&gt;    Remove jobs associated with the current git branch.&lt;/span&gt;
+&lt;span class="sd"&gt;    &amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;All in all, &lt;code&gt;clik&lt;/code&gt; is a neat little library that greatly helps having to write a lot of 
+boilerplate code for command line handling. Highly recommended!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: the above code is in a branch &lt;code&gt;better-command-line-handling&lt;/code&gt;... it will
+be integrated in &lt;code&gt;master&lt;/code&gt; this week (I think).&lt;/p&gt;</summary><category term="command-line"></category><category term="python"></category><category term="script"></category></entry></feed>
