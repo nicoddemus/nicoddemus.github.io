@@ -42,9 +42,8 @@ TRANSLATION_FEED_ATOM = None
 
 # Blogroll
 MENUITEMS = [
-    #('Python', '/category/python/'),
     ('Projects', '/pages/projects/'),
-    ('About', '/about/'),
+    ('About', '/pages/about/'),
 ]
 LINKS = []
 
