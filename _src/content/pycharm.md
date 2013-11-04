@@ -74,15 +74,21 @@ The fact that PyCharm warned me about that was pretty cool. :)
 
 Like Eclipse, PyCharm also supports a task based workflow. 
 
-PyCharm thought comes out of the box with a ton of connectors available 
-(Mantis, Jira, Bugzilla, etc). Also, when you start a task, it asks if
+PyCharm however comes out of the box with a ton of connectors available 
+(Mantis, Jira, Bugzilla, etc). Also, when you start working a task, it asks if
 you would like to create a new feature branch for that task, with configurable
 branch name.
 
 (pic)
 
-This avoids having to manually create a task which is a little tedious (having
-the task id on hand, picking a name, etc). Bonus points.
+This avoids having to manually create a branch, which is a little tedious (having
+the task id on hand, choosing a name, etc). Bonus points.
+
+## Fast ##
+
+I noticed that PyCharm scans source for code completion much faster than Eclipse,
+and without interrupting your work. It is really frustrating when you try to save 
+a file and Eclipse stops you from doing so by displaying a modal progress dialog...
 
 # Points #
 
