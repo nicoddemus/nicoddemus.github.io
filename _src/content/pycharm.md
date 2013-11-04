@@ -48,6 +48,7 @@ and be able to modify it on spot.
 As another side bonus, if you for any reason close the commit dialog, it remembers the commit 
 message you wrote already the next time you try to commit.
 
+
 ## Tooltips regarding obsolete code and improvements ##
 
 PyCharm can inform you about obsolete constructs and suggest improvements in the code. 
@@ -66,11 +67,25 @@ PyCharm was displaying a lamp right next to the `with` keyword:
 I'm using Python 2.7, and in fact you should use the new syntax for nested context managers, but alas
 I had to support old versions of python for that code, so `nested` stayed.
 
-I that PyCharm warned me about that was pretty cool. :)
+The fact that PyCharm warned me about that was pretty cool. :)
+
+
+## Tasks + Feature Branches ##
+
+Like Eclipse, PyCharm also supports a task based workflow. 
+
+PyCharm thought comes out of the box with a ton of connectors available 
+(Mantis, Jira, Bugzilla, etc). Also, when you start a task, it asks if
+you would like to create a new feature branch for that task, with configurable
+branch name.
+
+(pic)
+
+This avoids having to manually create a task which is a little tedious (having
+the task id on hand, picking a name, etc). Bonus points.
 
 # Points #
 
-* Tasks connection + creating branches for tasks
 * Quick Documentation
 * Fast
 * Commit options: check todos, auto imports, etc.
