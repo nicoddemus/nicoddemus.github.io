@@ -59,6 +59,7 @@ THEME = 'blueidea'
 
 STATIC_PATHS = [
     'favicon.ico',
+    'content/static',
 ]
 
 # Uncomment following line if you want document-relative URLs when developing
