@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <title>Things that surprised me in PyCharm</title>
+        <link rel="stylesheet" href="http://nicoddemus.github.io/theme/css/main.css" />
+        <link href="http://nicoddemus.github.io/atom.xml" type="application/atom+xml" rel="alternate" title="Midnight Coding Atom Feed" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://nicoddemus.github.io/">Midnight Coding  <strong>Sleeping is for the weak</strong></a></h1>
+                <nav><ul>
+                    <li><a href="/pages/projects/">Projects</a></li>
+                    <li><a href="/pages/about/">About</a></li>
+                    <li><a href="http://nicoddemus.github.io/category/general">General</a></li>
+                    <li class="active"><a href="http://nicoddemus.github.io/category/python">Python</a></li>
+                </ul>
+                </nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://nicoddemus.github.io/articles/pycharm" rel="bookmark"
+           title="Permalink to Things that surprised me in PyCharm">Things that surprised me in PyCharm</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <span>sáb 26 outubro 2013</span>
+<span>| tags: <a href="http://nicoddemus.github.io/tag/python">python</a><a href="http://nicoddemus.github.io/tag/script">script</a></span>
+</footer><!-- /.post-info -->      <p>I have been an <a href="eclipse.org">Eclipse</a> user for years now, using it to
+write mostly Python (with <a href="pydev.org">PyDev</a>) and C++ (with <a href="http://www.eclipse.org/cdt/">CDT</a>). 
+Recently I heard about <a href="http://www.jetbrains.com/pycharm/">PyCharm</a>
+and its new free community edition from a good friend of mine, <a href="https://github.com/itghisi">Igor</a>. He, also a long time Eclipse user,
+was giving it a lot of praise so I decided to give PyCharm a try, at least while working
+at home.</p>
+<p>So far, I have been loving it so much that I have even made the switch to using at work. :)</p>
+<p>Below I describe some of the things that surprised me in a very good way
+while using PyCharm. </p>
+<p><strong>Disclaimer</strong></p>
+<p>I don't intend in no way to bash Eclipse or PyDev, have been using it in years and it is great. </p>
+<p>Also, keep in mind that this is my personal experience. Your mileage may vary. :)</p>
+<h1>Diff view while committing</h1>
+<p>In Eclipse, when you commit you're shown a list of the files being committed
+in the commit dialog. You can double-click on any of them to obtain a side-by-side
+view of any of the changes:</p>
+<p><img alt="eclipse-commit-diff" src="http://nicoddemus.github.io/content/static/pycharm/eclipse-commit-diff.png" /></p>
+<p>Now, if you see something you like to change in the code (a misspelled word like the above, missing documentation
+you would like to add, etc.), too bad: you have to close everything
+(including the commit dialog with your nice commit message), go find the offending code and change it,
+and start again from scratch.</p>
+<p>PyCharm has the same feature, but your changes are <strong>editable</strong>. I can't stress enough how awesome is being able to
+modify it on spot.</p>
+<p><img alt="pycharm-commit-diff" src="http://nicoddemus.github.io/content/static/pycharm/pycharm-commit-diff.png" /></p>
+<p>I can fix the typo above easily during the commit process.</p>
+<p>As another side bonus, if you for any reason close the commit dialog, it remembers the commit 
+message you wrote already the next time you try to commit.</p>
+<h1>Commit-Time Checks</h1>
+<p>Still during commit, we have several options that can be executed before the actual commit, like
+"Optimizing Imports" (sort and remove unused), check for TODOs in the change-set, among others:</p>
+<p><img alt="commit" src="http://nicoddemus.github.io/content/static/pycharm/commit.png" /></p>
+<p>One interesting bit is the "Perform code analysis" option...</p>
+<h1>Inspect Code</h1>
+<p>You can ask PyCharm to perform a "Code Inspection" in a single file, directory, or entire projects. It will look for problems
+and improvements in your code without actually executing it. As explained in the previous section, this can also be
+done automatically on changed files during commit.</p>
+<p>Here's the results of an inspection in a single file:</p>
+<p><img alt="inspection" src="http://nicoddemus.github.io/content/static/pycharm/inspection.png" /></p>
+<p>For some of the inspection results, you can also apply a suggested fix. For instance, from
+"Function call can be replaced with set literal" we can select the option to fix that:</p>
+<p><img alt="inspection-2" src="http://nicoddemus.github.io/content/static/pycharm/inspection-2.png" /></p>
+<p>PyCharm will then change this:</p>
+<div class="highlight"><pre>    <span class="n">extensions</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s">&#39;.avi&#39;</span><span class="p">,</span> <span class="s">&#39;.mp4&#39;</span><span class="p">,</span> <span class="s">&#39;.mpg&#39;</span><span class="p">,</span> <span class="s">&#39;.mkv&#39;</span><span class="p">])</span>
+</pre></div>
+
+
+<p>into this, automatically:</p>
+<div class="highlight"><pre>    <span class="n">extensions</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;.avi&#39;</span><span class="p">,</span> <span class="s">&#39;.mp4&#39;</span><span class="p">,</span> <span class="s">&#39;.mpg&#39;</span><span class="p">,</span> <span class="s">&#39;.mkv&#39;</span><span class="p">}</span>
+</pre></div>
+
+
+<p>You can disable any inspection you like, including on a per-project basis if wanted.</p>
+<h1>Refactoring</h1>
+<p>I was trying to rename a module and couldn't find the option on the menu... F2 also didn't work.</p>
+<p>Then I glanced at the "Refactoring/Rename" sub-menu of the file and thought... <em>could it be?</em>. Yes!
+When you rename a module, PyCharm will ask if you would like to also fix all related imports
+for you automatically. <em>Bliss</em></p>
+<p>There is a lot of other refactoring options, but I haven't had the chance to try them
+yet.</p>
+<h1>Tooltips regarding obsolete code and improvements</h1>
+<p>PyCharm can inform you about obsolete constructs and suggest improvements in the code. </p>
+<p>For instance, I had code like this:</p>
+<div class="highlight"><pre><span class="k">with</span> <span class="n">nested</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filename1</span><span class="p">),</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename2</span><span class="p">))</span> <span class="k">as</span> <span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">):</span>
+    <span class="o">&lt;</span><span class="n">snip</span><span class="o">&gt;</span>
+</pre></div>
+
+
+<p>PyCharm was displaying <code>nested</code> in strike-out:</p>
+<p><img alt="nested-obsolete" src="http://nicoddemus.github.io/content/static/pycharm/nested-obsolete.png" /></p>
+<p>I'm using Python 2.7, and in fact you should use the new syntax for nested context managers, but alas
+I have to support old versions of python in that code, so <code>nested</code> stays.</p>
+<p>The fact that PyCharm warned me about that was pretty cool. :)</p>
+<h1>Tasks + Feature Branches</h1>
+<p>Like Eclipse (with Mylin), PyCharm also supports a task based workflow (including task-sensitive contexts).</p>
+<p>PyCharm however comes out of the box with a ton of connectors available 
+(GitHub, Mantis, Jira, Bugzilla, etc). Also, when you start working a task, it asks if
+you would like to create a new feature branch for that task, with configurable
+branch name.</p>
+<p><img alt="nested-obsolete" src="http://nicoddemus.github.io/content/static/pycharm/task-branch.png" /></p>
+<p>This avoids having to manually create a branch, which is a little tedious (having
+the task id on hand, choosing a name, etc).</p>
+<p>Bonus points.</p>
+<h1>Fast</h1>
+<p>I noticed that PyCharm scans source for code completion much faster than Eclipse,
+and without interrupting your work. It is really frustrating when you try to save 
+a file and Eclipse stops you from doing so because it is executing a background task...</p>
+<h1>Quick Documentation</h1>
+<p>When you have the cursor over a function/method/class whatever, you have the option to view "Quick Documentation".
+See it in action:</p>
+<p><img alt="quick-doc" src="http://nicoddemus.github.io/content/static/pycharm/quick-doc.png" /></p>
+<p>As you can see, it renders the docstring of the method in a nice looking format, plus it infers the parameter types
+from code usage... so even if the function doesn't have a docstring, you still get this:</p>
+<p><img alt="quick-doc-2" src="http://nicoddemus.github.io/content/static/pycharm/quick-doc-2.png" /></p>
+<p>Very nice!</p>
+<h1>Docutils Support</h1>
+<p>PyCharm includes first-class support for docutils, making it easy to re-generate the documentation directly from the IDE.</p>
+<p>On the plus side, it also includes a very nice ReST editor (much better than Eclipse IMHO):</p>
+<p><img alt="rst" src="http://nicoddemus.github.io/content/static/pycharm/rst.png" /></p>
+<h1>Sane Plugin System</h1>
+<p>In my experience, installing plugins in Eclipse is a pain:</p>
+<ul>
+<li>It is hard to find where you are suppose to go (tip: <em>Help/Install New Software...</em>);</li>
+<li>You don't have a single index, so you have to find the plugin on the web;</li>
+<li>The dependency system sometimes fails horribly and I end-up not being able to install
+  the plugin I wanted (several people at work also experience this and in the end give up);</li>
+</ul>
+<p>PyCharm plugin experience was <strong>much</strong> smoother.</p>
+<p>First, it is located where you would expect it: It is an item on "Settings":</p>
+<p><img alt="plugins" src="http://nicoddemus.github.io/content/static/pycharm/plugins.png" /></p>
+<p>You can easily browse for plugins directly from there:</p>
+<p><img alt="plugins-browse" src="http://nicoddemus.github.io/content/static/pycharm/plugins-browse.png" /></p>
+<p>I quickly installed a Markdown editor (as nice as ReST's), a pastebin plugin so that I can quickly create pastes directly
+from selected text, and CodeGlance, which gives a nice code overview similar to that of SublimeText. :)</p>
+<h1>Wrapping Up</h1>
+<p>That's it so far. I tried to list everything that I would show to my friends
+as "look how cool this is". I have been using PyCharm for very little time,
+so if I find more interesting things worth of another post I will write a
+continuation. :)</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://nicoddemus.github.io/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="https://github.com/nicoddemus">GitHub</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
+        </footer><!-- /#contentinfo -->
+
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-43463457-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+<script type="text/javascript">
+    var disqus_shortname = 'midnightcoding';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+</body>
+</html>
