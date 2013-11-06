@@ -1,9 +1,8 @@
 Title: Things that surprised me in PyCharm
-Date: 2013-10-26 22:03
+Date: 2013-11-06 
 Category: Python
 tags: python, ide
-Summary: Things that surprised me in PyCharm from an Eclipse user point of view
-status: draft
+Summary: Things that surprised me in PyCharm as an Eclipse user
 
 I have been an [Eclipse](eclipse.org) user for years now, using it to
 write mostly Python (with [PyDev](pydev.org)) and C++ (with [CDT](http://www.eclipse.org/cdt/)).
