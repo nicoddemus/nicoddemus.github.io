@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Midnight Coding</title>
+        <title>Things that surprised me in PyCharm (part 2)</title>
         <link rel="stylesheet" href="http://nicoddemus.github.io/theme/css/main.css" />
         <link href="http://nicoddemus.github.io/atom.xml" type="application/atom+xml" rel="alternate" title="Midnight Coding Atom Feed" />
 
@@ -18,21 +18,58 @@
                     <li><a href="/pages/projects/">Projects</a></li>
                     <li><a href="/pages/about/">About</a></li>
                     <li><a href="http://nicoddemus.github.io/category/general">General</a></li>
-                    <li><a href="http://nicoddemus.github.io/category/python">Python</a></li>
+                    <li class="active"><a href="http://nicoddemus.github.io/category/python">Python</a></li>
                 </ul>
                 </nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
-<h1>Archives for Midnight Coding</h1>
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://nicoddemus.github.io/articles/pycharm2" rel="bookmark"
+           title="Permalink to Things that surprised me in PyCharm (part 2)">Things that surprised me in PyCharm (part 2)</a></h1>
+    </header>
 
-<dl>
-    <dt>qua 06 novembro 2013</dt>
-    <dd><a href="http://nicoddemus.github.io/articles/pycharm">Things that surprised me in PyCharm</a></dd>
-    <dt>sáb 26 outubro 2013</dt>
-    <dd><a href="http://nicoddemus.github.io/articles/pelican">New blog! Now Pelican-powered.</a></dd>
-    <dt>dom 25 agosto 2013</dt>
-    <dd><a href="http://nicoddemus.github.io/articles/clik">clik: framework for command-line applications</a></dd>
-</dl>
+    <div class="entry-content">
+<footer class="post-info">
+        <span>sáb 26 outubro 2013</span>
+<span>| tags: <a href="http://nicoddemus.github.io/tag/python">python</a><a href="http://nicoddemus.github.io/tag/ide">ide</a></span>
+</footer><!-- /.post-info -->      <p>Draft for a new post about PyCharm</p>
+<h1>Points</h1>
+<p>(igor)</p>
+<ul>
+<li>
+<p>Refactoring</p>
+<ul>
+<li>If you move a module inside your project, imports are automatically updated</li>
+<li>Smart: i.e.: when you do an Extract Method, pycharm search for other pieces of code in the same module where the extracted method could be used (like a DRY inspection)</li>
+</ul>
+</li>
+<li>
+<p>Inspection</p>
+<ul>
+<li>More rich code inspection: some type checking, uninitialized variables, method may be static...</li>
+</ul>
+</li>
+<li>
+<p>Git Integration</p>
+<ul>
+<li>When creating a branch for your project, pycharm asks if you want to create a branch with the same name for projects in your workspace, and keep them in sync</li>
+<li>The branch menu shows local and remote branches. Operations (merge, checkout, create) are easily accessible. Other minor but cool tricks like a pop up asking if you want to delete a branch after a merge operation.</li>
+</ul>
+</li>
+<li>
+<p>Debugger</p>
+<ul>
+<li>When you Run a script in debug mode, Eclipse asks if you want to switch to "Debugger view". This is a pain.
+  PyCharm just shows a simple Debug dock with all debug functions easily accessible.
+  It has also the options "Run to Cursor" and "Show Execution Point", which I think Eclipse hasn't.</li>
+</ul>
+</li>
+</ul>
+    </div><!-- /.entry-content -->
+
+  </article>
 </section>
         <section id="extras" class="body">
                 <div class="social">
