@@ -1,7 +1,7 @@
 Title: Things that surprised me in PyCharm
 Date: 2013-10-26 22:03
 Category: Python
-tags: python, script
+tags: python, ide
 Summary: Quick overview of a command-line application framework
 status: draft
 
