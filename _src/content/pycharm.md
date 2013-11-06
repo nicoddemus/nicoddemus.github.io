@@ -2,26 +2,26 @@ Title: Things that surprised me in PyCharm
 Date: 2013-10-26 22:03
 Category: Python
 tags: python, ide
-Summary: Quick overview of a command-line application framework
+Summary: Things that surprised me in PyCharm from an Eclipse user point of view
 status: draft
 
 I have been an [Eclipse](eclipse.org) user for years now, using it to
-write mostly Python (with [PyDev](pydev.org)) and C++ (with [CDT](http://www.eclipse.org/cdt/)). 
+write mostly Python (with [PyDev](pydev.org)) and C++ (with [CDT](http://www.eclipse.org/cdt/)).
 Recently I heard about [PyCharm](http://www.jetbrains.com/pycharm/)
 and its new free community edition from a good friend of mine, [Igor](https://github.com/itghisi). He, also a long time Eclipse user,
 was giving it a lot of praise so I decided to give PyCharm a try, at least while working
 at home.
 
-So far, I have been loving it so much that I have even made the switch to using at work. :)
+So far, I have been loving it so much that I have even made the switch to using at work.
 
 Below I describe some of the things that surprised me in a very good way
-while using PyCharm. 
+while using PyCharm.
 
 **Disclaimer**
 
-I don't intend in no way to bash Eclipse or PyDev, have been using it in years and it is great. 
+I don't intend in no way to bash Eclipse or PyDev, I have been using it in years and it is great.
 
-Also, keep in mind that this is my personal experience. Your mileage may vary. :)
+Also, keep in mind that this is my personal experience. Your mileage may vary.
 
 # Diff view while committing #
 
@@ -43,7 +43,7 @@ modify it on spot.
 
 I can fix the typo above easily during the commit process.
 
-As another side bonus, if you for any reason close the commit dialog, it remembers the commit 
+As another side bonus, if you for any reason close the commit dialog, it remembers the commit
 message you wrote already the next time you try to commit.
 
 # Commit-Time Checks #
@@ -58,7 +58,8 @@ One interesting bit is the "Perform code analysis" option...
 # Inspect Code #
 
 You can ask PyCharm to perform a "Code Inspection" in a single file, directory, or entire projects. It will look for problems
-and improvements in your code without actually executing it. As explained in the previous section, this can also be
+and improvements in your code without actually executing it, like type checking, methods that can be static, violation
+of code standards, etc. As explained in the previous section, this can also be
 done automatically on changed files during commit.
 
 Here's the results of an inspection in a single file:
@@ -97,7 +98,7 @@ yet.
 
 # Tooltips regarding obsolete code and improvements #
 
-PyCharm can inform you about obsolete constructs and suggest improvements in the code. 
+PyCharm can inform you about obsolete constructs and suggest improvements in the code.
 
 For instance, I had code like this:
 
@@ -113,14 +114,14 @@ PyCharm was displaying `nested` in strike-out:
 I'm using Python 2.7, and in fact you should use the new syntax for nested context managers, but alas
 I have to support old versions of python in that code, so `nested` stays.
 
-The fact that PyCharm warned me about that was pretty cool. :)
+The fact that PyCharm warned me about that was pretty cool.
 
 
 # Tasks + Feature Branches #
 
 Like Eclipse (with Mylin), PyCharm also supports a task based workflow (including task-sensitive contexts).
 
-PyCharm however comes out of the box with a ton of connectors available 
+PyCharm however comes out of the box with a ton of connectors available
 (GitHub, Mantis, Jira, Bugzilla, etc). Also, when you start working a task, it asks if
 you would like to create a new feature branch for that task, with configurable
 branch name.
@@ -135,7 +136,7 @@ Bonus points.
 # Fast #
 
 I noticed that PyCharm scans source for code completion much faster than Eclipse,
-and without interrupting your work. It is really frustrating when you try to save 
+and without interrupting your work. It is really frustrating when you try to save
 a file and Eclipse stops you from doing so because it is executing a background task...
 
 # Quick Documentation #
@@ -181,11 +182,11 @@ You can easily browse for plugins directly from there:
 ![plugins-browse]({filename}static/pycharm/plugins-browse.png)
 
 I quickly installed a Markdown editor (as nice as ReST's), a pastebin plugin so that I can quickly create pastes directly
-from selected text, and CodeGlance, which gives a nice code overview similar to that of SublimeText. :)
+from selected text, and CodeGlance, which gives a nice code overview similar to that of SublimeText.
 
 # Wrapping Up #
 
 That's it so far. I tried to list everything that I would show to my friends
 as "look how cool this is". I have been using PyCharm for very little time,
 so if I find more interesting things worth of another post I will write a
-continuation. :)
+continuation.
