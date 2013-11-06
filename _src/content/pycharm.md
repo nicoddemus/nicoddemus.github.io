@@ -24,6 +24,21 @@ I don't intend in no way to bash Eclipse or PyDev, I have been using it in years
 
 Also, keep in mind that this is my personal experience. Your mileage may vary.
 
+# Real-time Diff #
+
+PyCharm keeps track of the changes you are making in a file by displaying a blue marker on the left side of the editor:
+
+![diff-1]({filename}static/pycharm/diff-1.png)
+
+This by itself is very handy, as I used to use the "Compare against HEAD" command all the time in Eclipse to see where I changed
+a file. In PyCharm you can with a glance see where your changes are.
+
+Even more, clicking on the marker you are presented with the previous text and a toolbar:
+
+![diff-2]({filename}static/pycharm/diff-2.png)
+
+You can easily select to rollback those changes, view the difference in a full fledged dialog or copy the previous text to the clipboard.
+
 # Diff view while committing #
 
 In Eclipse, when you commit you're shown a list of the files being committed
@@ -55,21 +70,6 @@ Still during commit, we have several options that can be executed before the act
 ![commit]({filename}static/pycharm/commit.png)
 
 One interesting bit is the "Perform code analysis" option...
-
-# Real-time Diff #
-
-PyCharm keeps track of the changes you are making in a file by displaying a blue marker on the left side of the editor:
-
-![diff-1]({filename}static/pycharm/diff-1.png)
-
-This by itself is very handy, as I used to use the "Compare against HEAD" command all the time in Eclipse to see where I changed
-a file. In PyCharm you can with a glance see where your changes are.
-
-Even more, clicking on the marker you are presented with the previous text and a toolbar:
-
-![diff-2]({filename}static/pycharm/diff-2.png)
-
-You can easily select to rollback those changes, view the difference in a full fledged dialog or copy the previous text to the clipboard.
 
 # Inspect Code #
 
