@@ -12,7 +12,8 @@ and its new free community edition from a good friend of mine, [Igor](https://gi
 was giving it a lot of praise so I decided to give PyCharm a try, at least while working
 at home.
 
-So far, I have been loving it so much that I have even made the switch to using at work.
+So far, I have been loving it so much that I have even made the switch to using at work (the community edition is under
+[Apache 2](http://choosealicense.com/licenses/apache/) license).
 
 Below I describe some of the things that surprised me in a very good way
 while using PyCharm.
