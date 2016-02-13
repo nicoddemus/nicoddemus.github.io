@@ -52,16 +52,20 @@ SOCIAL = [('GitHub', 'https://github.com/nicoddemus')]
 
 DEFAULT_PAGINATION = 10
 
-PLUGIN_PATH = 'x:\\pelican-plugins'
+PLUGIN_PATHS = ['x:\\pelican-plugins']
 PLUGINS = ['gravatar']
 
 THEME = 'blueidea'
 
+PATH = 'content'
 STATIC_PATHS = [
     'favicon.ico',
-    'content/static',
+    'static',
 ]
 
+import shutil
+shutil.copy('favicon.ico', OUTPUT_PATH)
+
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+RELATIVE_URLS = True
 
