@@ -3,8 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <title>Pytest 2016 sprint funding</title>
-        <link rel="stylesheet" href="http://nicoddemus.github.io/theme/css/main.css" />
-        <link href="http://nicoddemus.github.io/atom.xml" type="application/atom+xml" rel="alternate" title="Midnight Coding Atom Feed" />
+        <link rel="stylesheet" href="../theme/css/main.css" />
 
         <!--[if IE]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -13,12 +12,12 @@
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <h1><a href="http://nicoddemus.github.io/">Midnight Coding  <strong>Sleeping is for the weak</strong></a></h1>
+                <h1><a href="../">Midnight Coding  <strong>Sleeping is for the weak</strong></a></h1>
                 <nav><ul>
                     <li><a href="/pages/projects/">Projects</a></li>
                     <li><a href="/pages/about/">About</a></li>
-                    <li><a href="http://nicoddemus.github.io/category/general">General</a></li>
-                    <li class="active"><a href="http://nicoddemus.github.io/category/python">Python</a></li>
+                    <li><a href="../category/general">General</a></li>
+                    <li><a href="../category/python">Python</a></li>
                 </ul>
                 </nav>
         </header><!-- /#banner -->
@@ -26,32 +25,88 @@
   <article>
     <header>
       <h1 class="entry-title">
-        <a href="http://nicoddemus.github.io/drafts/pytest-2016-sprint.html" rel="bookmark"
+        <a href="../drafts/pytest-2016-sprint.html" rel="bookmark"
            title="Permalink to Pytest 2016 sprint funding">Pytest 2016 sprint funding</a></h1>
     </header>
 
     <div class="entry-content">
 <footer class="post-info">
         <span>sáb 13 fevereiro 2016</span>
-<span>| tags: <a href="http://nicoddemus.github.io/tag/python">python</a><a href="http://nicoddemus.github.io/tag/testing">testing</a></span>
-</footer><!-- /.post-info -->      <p>When I first discovered <a href="https://github.com/pytest-dev/pytest">pytest</a>, I was
-really awed by it. I remember posting about it in our internal blog, under the
-title <em>pytest: best thing since sliced bread</em>, highlighting the features I 
-liked best:</p>
+<span>| tags: <a href="../tag/python">python</a><a href="../tag/testing">testing</a><a href="../tag/pytest">pytest</a></span>
+</footer><!-- /.post-info -->      <h1>Pytest Sprint 2016</h1>
+<p>In June <a href="https://github.com/pytest-dev/pytest">pytest</a> core developers and users are gathering in Freiburg, Germany for
+a <a href="http://pytest.org/latest/announce/sprint2016.html">sprint</a>. This is being
+funded by a <a href="https://www.indiegogo.com/projects/python-testing-sprint-mid-2016#">indiegogo campaign</a>, so
+if you are a pytest user or your company heavily relies on pytest, please consider 
+making a donation!</p>
+<h1>Back in 2013</h1>
+<p>I was really excited when I first discovered pytest. I wrote a post
+titled <em>pytest: best thing since sliced bread</em> in our company blog, highlighting the features I 
+liked best. Our blog is not public, but I will post some of its 
+contents here:</p>
 <ul>
-<li><code>assertEqual</code>, <code>assertSets</code>, <code>assertSomething</code>? No more! 
-You just use plain <code>assert</code>s statements in your test, and pytest will show
-proper interim values for the asserted expressions.</li>
+<li>
+<p><strong>assertEqual?</strong> no more. You just use plain asserts, and assertion rewrite
+ means that special output in failed assertions can be done, for example
+ by showing a context diff if a string comparison fails. </p>
+</li>
+<li>
+<p><strong>Test finding</strong>: The test runner automatically finds and runs tests just like 
+  we expect it, including xUnit style tests. 
+  Also, it supports using simple functions instead of having to subclass some test base class.
+  This was a problem back then, so we wrote our own test runner.</p>
+</li>
+<li>
+<p><strong>Code Coverage</strong>: Back then our own test runner implemented code coverage.</p>
+</li>
+<li>
+<p><strong>Parallel Support</strong>: Again our test runner implemented this. This was a major
+  need for us as we have thousands of tests so running them sequentially is not
+  an option.</p>
+</li>
+<li>
+<p><strong>skip and xfail</strong> built-in decorators.</p>
+</li>
+<li>
+<p><code>--pastebin</code> parameter. Very useful to share errors with others, better
+  than pasting a messy traceback in Skype (still used for communication to this day). 
+  This is an underrated core plugin in my opinion. :)</p>
+</li>
+<li>
+<p><strong>Fixtures</strong>, which is one of the killer pytest feature.
+  The automatic dependency injection really shines in promoting code re-use
+  between tests.</p>
+</li>
+<li>
+<p><strong>Plugins</strong>: all features are implemented in terms of plugins, 
+  and this is another pytest killer feature as the 
+  <a href="http://plugincompat.herokuapp.com">plugin ecosystem</a> is huge.</p>
+</li>
 </ul>
-<p>```python
-  # content of test_assert1.py<br />
-  def f():<br />
-      return 3  </p>
-<p>def test_function():<br />
-      assert f() == 4<br />
-  ```</p>
+<h1>Adopting</h1>
+<p>py.test was so feature-rich that we decided to ditch our test runner. It was
+argued that even if you wanted to write only xUnit-style tests and leave
+more advanced features (like fixtures) alone, being able to write plain asserts
+was enough reason to replace our runner.</p>
+<p>It was only two years later that we could finally adopt py.test 
+for all projects. While initially there were concerns now even the initial 
+nay-sayers are praising py.test.</p>
+<p>It took us this long because:</p>
+<ul>
+<li>It was not a full-time thing, it was something one team member or another
+  (mostly me) spending some free extra time on.</li>
+<li>We needed support for running Qt tests, so I wrote <a href="https://github.com/pytest-dev/pytest-qt">pytest-qt</a>.</li>
+<li>There were several tests with problems when running under xdist. This happened
+  because our custom runner parallized tests by <em>file</em>, while xdist parallizes
+  <em>all</em> tests. When xdist was brought in several tests presented concurrency
+  issues within tests on the same file, as they never ran in parallel before.</li>
+</ul>
+<p>But the adoption is complete and we couldn't be happier with it. We are also
+migrating from xUnit tests to fixture based ones as time allows.  </p>
+<h1>Now</h1>
 <p>It's been two years since I became a <a href="https://github.com/pytest-dev/pytest">pytest</a>
-core developer. </p>
+core developer. I try to be very active in the community and contribute with
+PRs whenever I can. Really happy to be able to work on and use such a great tool.</p>
     </div><!-- /.entry-content -->
 
   </article>
@@ -60,7 +115,6 @@ core developer. </p>
                 <div class="social">
                         <h2>social</h2>
                         <ul>
-                            <li><a href="http://nicoddemus.github.io/atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
 
                             <li><a href="https://github.com/nicoddemus">GitHub</a></li>
                         </ul>
@@ -71,24 +125,5 @@ core developer. </p>
                 <p>Powered by <a href="http://getpelican.com/">Pelican</a>. Theme <a href="https://github.com/blueicefield/pelican-blueidea/">blueidea</a>, inspired by the default theme.</p>
         </footer><!-- /#contentinfo -->
 
-    <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-43463457-1']);
-    _gaq.push(['_trackPageview']);
-    (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-    </script>
-<script type="text/javascript">
-    var disqus_shortname = 'midnightcoding';
-    (function () {
-        var s = document.createElement('script'); s.async = true;
-        s.type = 'text/javascript';
-        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
-        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-    }());
-</script>
 </body>
 </html>
