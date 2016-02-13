@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
         <meta charset="utf-8" />
-        <title>Midnight Coding</title>
+        <title>Pytest 2016 sprint funding</title>
         <link rel="stylesheet" href="http://nicoddemus.github.io/theme/css/main.css" />
         <link href="http://nicoddemus.github.io/atom.xml" type="application/atom+xml" rel="alternate" title="Midnight Coding Atom Feed" />
 
@@ -18,21 +18,43 @@
                     <li><a href="/pages/projects/">Projects</a></li>
                     <li><a href="/pages/about/">About</a></li>
                     <li><a href="http://nicoddemus.github.io/category/general">General</a></li>
-                    <li><a href="http://nicoddemus.github.io/category/python">Python</a></li>
+                    <li class="active"><a href="http://nicoddemus.github.io/category/python">Python</a></li>
                 </ul>
                 </nav>
         </header><!-- /#banner -->
 <section id="content" class="body">
-<h1>Archives for Midnight Coding</h1>
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://nicoddemus.github.io/drafts/pytest-2016-sprint.html" rel="bookmark"
+           title="Permalink to Pytest 2016 sprint funding">Pytest 2016 sprint funding</a></h1>
+    </header>
 
-<dl>
-    <dt>qua 06 novembro 2013</dt>
-    <dd><a href="http://nicoddemus.github.io/articles/pycharm">Things that surprised me in PyCharm</a></dd>
-    <dt>sáb 26 outubro 2013</dt>
-    <dd><a href="http://nicoddemus.github.io/articles/pelican">New blog! Now Pelican-powered.</a></dd>
-    <dt>dom 25 agosto 2013</dt>
-    <dd><a href="http://nicoddemus.github.io/articles/clik">clik: framework for command-line applications</a></dd>
-</dl>
+    <div class="entry-content">
+<footer class="post-info">
+        <span>sáb 13 fevereiro 2016</span>
+<span>| tags: <a href="http://nicoddemus.github.io/tag/python">python</a><a href="http://nicoddemus.github.io/tag/testing">testing</a></span>
+</footer><!-- /.post-info -->      <p>When I first discovered <a href="https://github.com/pytest-dev/pytest">pytest</a>, I was
+really awed by it. I remember posting about it in our internal blog, under the
+title <em>pytest: best thing since sliced bread</em>, highlighting the features I 
+liked best:</p>
+<ul>
+<li><code>assertEqual</code>, <code>assertSets</code>, <code>assertSomething</code>? No more! 
+You just use plain <code>assert</code>s statements in your test, and pytest will show
+proper interim values for the asserted expressions.</li>
+</ul>
+<p>```python
+  # content of test_assert1.py<br />
+  def f():<br />
+      return 3  </p>
+<p>def test_function():<br />
+      assert f() == 4<br />
+  ```</p>
+<p>It's been two years since I became a <a href="https://github.com/pytest-dev/pytest">pytest</a>
+core developer. </p>
+    </div><!-- /.entry-content -->
+
+  </article>
 </section>
         <section id="extras" class="body">
                 <div class="social">

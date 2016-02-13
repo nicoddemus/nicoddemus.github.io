@@ -11,8 +11,8 @@ DISPLAY_PAGES_ON_MENU = False
 
 FILENAME_METADATA = r'(?P<slug>.*)'
 
-AUTHOR_SAVE_AS = False
-AUTHORS_SAVE_AS = False
+AUTHOR_SAVE_AS = ''
+AUTHORS_SAVE_AS = ''
 
 ARTICLE_URL = 'articles/{slug}'
 ARTICLE_SAVE_AS = 'articles/{slug}/index.html'
