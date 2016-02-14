@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Midnight Coding</title><link href="http://nicoddemus.github.io/" rel="alternate"></link><link href="http://nicoddemus.github.io/tag/testing/atom.xml" rel="self"></link><id>http://nicoddemus.github.io/</id><updated>2016-02-13T00:00:00-02:00</updated><entry><title>Pytest 2016 sprint funding</title><link href="http://nicoddemus.github.io/articles/pytest-2016-sprint" rel="alternate"></link><updated>2016-02-13T00:00:00-02:00</updated><author><name>Bruno Oliveira</name></author><id>tag:nicoddemus.github.io,2016-02-13:articles/pytest-2016-sprint</id><summary type="html">&lt;h1&gt;Pytest Sprint 2016&lt;/h1&gt;
+&lt;p&gt;In June &lt;a href="https://github.com/pytest-dev/pytest"&gt;pytest&lt;/a&gt; core developers and users are gathering in Freiburg, Germany for
+a &lt;a href="http://pytest.org/latest/announce/sprint2016.html"&gt;sprint&lt;/a&gt;. This is being
+funded by a &lt;a href="https://www.indiegogo.com/projects/python-testing-sprint-mid-2016#"&gt;indiegogo campaign&lt;/a&gt;, so
+if you are a pytest user or your company heavily relies on pytest, please consider 
+making a donation!&lt;/p&gt;
+&lt;p&gt;Some topics I'm excited about and probably will work on are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Improve pytest-xdist to use fixture-based scheduling. This is a long standing 
+  topic, you can see more details in this 
+  pytest-xdist &lt;a href="https://github.com/pytest-dev/pytest-xdist/issues/18"&gt;issue&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Improve xUnit setup/teardown support by using internal auto-use fixtures.
+  This would solve some ordering issues like &lt;a href="https://github.com/pytest-dev/pytest/issues/517"&gt;#517&lt;/a&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Fixing some long standing bugs and review the issue tracker.   &lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Back in 2013&lt;/h1&gt;
+&lt;p&gt;I was really excited when I first discovered pytest. I wrote a post
+titled &lt;em&gt;pytest: best thing since sliced bread&lt;/em&gt; in our company blog, highlighting the features I 
+liked best. Our blog is not public, but I will post some of its 
+contents here:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;assertEqual?&lt;/strong&gt; no more. You just use plain asserts, and assertion rewrite
+ means that special output in failed assertions can be done, for example
+ by showing a context diff if a string comparison fails. &lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Test finding&lt;/strong&gt;: The test runner automatically finds and runs tests just like 
+  we expect it, including xUnit style tests. 
+  Also, it supports using simple functions instead of having to subclass some test base class.
+  This was a problem back then, so we wrote our own test runner.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Code Coverage&lt;/strong&gt;: Back then our own test runner implemented code coverage.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Parallel Support&lt;/strong&gt;: Again our test runner implemented this. This was a major
+  need for us as we have thousands of tests so running them sequentially is not
+  an option.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;skip and xfail&lt;/strong&gt; built-in decorators.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;--pastebin&lt;/code&gt; parameter. Very useful to share errors with others, better
+  than pasting a messy traceback in Skype (still used for communication to this day). 
+  This is an underrated core plugin in my opinion. :)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Fixtures&lt;/strong&gt;, which is one of the killer pytest feature.
+  The automatic dependency injection really shines in promoting code re-use
+  between tests.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Plugins&lt;/strong&gt;: all features are implemented in terms of plugins, 
+  and this is another pytest killer feature as the 
+  &lt;a href="http://plugincompat.herokuapp.com"&gt;plugin ecosystem&lt;/a&gt; is huge.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1&gt;Adopting&lt;/h1&gt;
+&lt;p&gt;py.test was so feature-rich that we decided to ditch our test runner. It was
+argued that even if you wanted to write only xUnit-style tests and leave
+more advanced features (like fixtures) alone, being able to write plain asserts
+was enough reason to replace our runner.&lt;/p&gt;
+&lt;p&gt;It was only two years later that we could finally adopt py.test 
+for all projects. While initially there were concerns now even the initial 
+nay-sayers are praising py.test.&lt;/p&gt;
+&lt;p&gt;It took us this long because:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;It was not a full-time thing, it was something one team member or another
+  (mostly me) spending some free extra time on.&lt;/li&gt;
+&lt;li&gt;We needed support for running Qt tests, so I wrote &lt;a href="https://github.com/pytest-dev/pytest-qt"&gt;pytest-qt&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;There were several tests with problems when running under xdist. This happened
+  because our custom runner parallized tests by &lt;em&gt;file&lt;/em&gt;, while xdist parallizes
+  &lt;em&gt;all&lt;/em&gt; tests. When xdist was brought in several tests presented concurrency
+  issues within tests on the same file, as they never ran in parallel before.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;But the adoption is complete and we couldn't be happier with it. We are also
+migrating from xUnit tests to fixture based ones as time allows.  &lt;/p&gt;
+&lt;h1&gt;Now&lt;/h1&gt;
+&lt;p&gt;It's been two years since I became a &lt;a href="https://github.com/pytest-dev/pytest"&gt;pytest&lt;/a&gt;
+core developer. I dedicate time to it as much as I can spare, trying to be helpful 
+in the issue tracker, contributing PRs and
+working on meta-improvements like moving the project to GitHub, 
+improving the release process, documentation, etc. &lt;/p&gt;
+&lt;p&gt;Pytest was created such an intelligent and friendly people, so I'm really happy to 
+be able to work on it and be part of the community.&lt;/p&gt;</summary><category term="python"></category><category term="testing"></category><category term="pytest"></category></entry></feed>
