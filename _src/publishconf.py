@@ -14,7 +14,8 @@ SITEURL = 'http://nicoddemus.github.io'
 RELATIVE_URLS = False
 
 FEED_ALL_ATOM = 'atom.xml'
-#CATEGORY_FEED_ATOM = None
+CATEGORY_FEED_ATOM = 'category/%s/atom.xml'
+TAG_FEED_ATOM = 'tag/%s/atom.xml'
 
 # Following items are often useful when publishing
 DISQUS_SITENAME = "midnightcoding"
