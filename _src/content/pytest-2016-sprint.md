@@ -3,7 +3,6 @@ Date: 2016-02-13
 Category: pytest
 tags: python, testing, pytest
 Summary: Pytest 2016 sprint funding, how it will be and what to expect
-status: draft
 
 
 # Pytest Sprint 2016
@@ -13,6 +12,17 @@ a [sprint](http://pytest.org/latest/announce/sprint2016.html). This is being
 funded by a [indiegogo campaign](https://www.indiegogo.com/projects/python-testing-sprint-mid-2016#), so
 if you are a pytest user or your company heavily relies on pytest, please consider 
 making a donation!
+
+Some topics I'm excited about and probably will work on are:
+
+* Improve pytest-xdist to use fixture-based scheduling. This is a long standing 
+  topic, you can see more details in this 
+  pytest-xdist [issue](https://github.com/pytest-dev/pytest-xdist/issues/18).
+  
+* Improve xUnit setup/teardown support by using internal auto-use fixtures.
+  This would solve some ordering issues like [#517](https://github.com/pytest-dev/pytest/issues/517).
+   
+* Fixing some long standing bugs and review the issue tracker.   
 
 # Back in 2013 
  
@@ -78,8 +88,13 @@ migrating from xUnit tests to fixture based ones as time allows.
 # Now
 
 It's been two years since I became a [pytest](https://github.com/pytest-dev/pytest)
-core developer. I try to be very active in the community and contribute with
-PRs whenever I can. Really happy to be able to work on and use such a great tool.
+core developer. I dedicate time to it as much as I can spare, trying to be helpful 
+in the issue tracker, contributing PRs and
+working on meta-improvements like moving the project to GitHub, 
+improving the release process, documentation, etc. 
+
+Pytest was created such an intelligent and friendly people, so I'm really happy to 
+be able to work on it and be part of the community.
 
 
 
