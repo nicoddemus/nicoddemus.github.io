@@ -93,7 +93,7 @@ in the issue tracker, contributing PRs and
 working on meta-improvements like moving the project to GitHub, 
 improving the release process, documentation, etc. 
 
-Pytest was created such an intelligent and friendly people, so I'm really happy to 
+Pytest was created by such intelligent and friendly people, so I'm really happy to 
 be able to work on it and be part of the community.
 
 
