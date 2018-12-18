@@ -45,31 +45,31 @@ while using PyCharm.</p>
 <p>Also, keep in mind that this is my personal experience. Your mileage may vary.</p>
 <h1>Real-time Diff</h1>
 <p>PyCharm keeps track of the changes you are making in a file by displaying a blue marker on the left side of the editor:</p>
-<p><img alt="diff-1" src="https://nicoddemus.github.io/static/pycharm/diff-1.png" /></p>
+<p><img alt="diff-1" src="https://nicoddemus.github.io/static/pycharm/diff-1.png"></p>
 <p>This by itself is very handy, as I used to use the "Compare against HEAD" command all the time in Eclipse to see where I changed
 a file. In PyCharm you can with a glance see where your changes are.</p>
 <p>Even more, clicking on the marker you are presented with the previous text and a toolbar:</p>
-<p><img alt="diff-2" src="https://nicoddemus.github.io/static/pycharm/diff-2.png" /></p>
+<p><img alt="diff-2" src="https://nicoddemus.github.io/static/pycharm/diff-2.png"></p>
 <p>You can easily select to rollback those changes, view the difference in a full fledged dialog or copy the previous text to the clipboard.</p>
 <h1>Diff view while committing</h1>
 <p>In Eclipse, when you commit you're shown a list of the files being committed
 in the commit dialog. You can double-click on any of them to obtain a side-by-side
 view of any of the changes:</p>
-<p><img alt="eclipse-commit-diff" src="https://nicoddemus.github.io/static/pycharm/eclipse-commit-diff.png" /></p>
+<p><img alt="eclipse-commit-diff" src="https://nicoddemus.github.io/static/pycharm/eclipse-commit-diff.png"></p>
 <p>Now, if you see something you like to change in the code (a misspelled word like the above, missing documentation
 you would like to add, etc.), too bad: you have to close everything
 (including the commit dialog with your nice commit message), go find the offending code and change it,
 and start again from scratch.</p>
 <p>PyCharm has the same feature, but your changes are <strong>editable</strong>. I can't stress enough how awesome is being able to
 modify it on spot.</p>
-<p><img alt="pycharm-commit-diff" src="https://nicoddemus.github.io/static/pycharm/pycharm-commit-diff.png" /></p>
+<p><img alt="pycharm-commit-diff" src="https://nicoddemus.github.io/static/pycharm/pycharm-commit-diff.png"></p>
 <p>I can fix the typo above easily during the commit process.</p>
 <p>As another side bonus, if you for any reason close the commit dialog, it remembers the commit
 message you wrote already the next time you try to commit.</p>
 <h1>Commit-Time Checks</h1>
 <p>Still during commit, we have several options that can be executed before the actual commit, like
 "Optimizing Imports" (sort and remove unused), check for TODOs in the change-set, among others:</p>
-<p><img alt="commit" src="https://nicoddemus.github.io/static/pycharm/commit.png" /></p>
+<p><img alt="commit" src="https://nicoddemus.github.io/static/pycharm/commit.png"></p>
 <p>One interesting bit is the "Perform code analysis" option...</p>
 <h1>Inspect Code</h1>
 <p>You can ask PyCharm to perform a "Code Inspection" in a single file, directory, or entire projects. It will look for problems
@@ -77,17 +77,17 @@ and improvements in your code without actually executing it, like type checking,
 of code standards, etc. As explained in the previous section, this can also be
 done automatically on changed files during commit.</p>
 <p>Here's the results of an inspection in a single file:</p>
-<p><img alt="inspection" src="https://nicoddemus.github.io/static/pycharm/inspection.png" /></p>
+<p><img alt="inspection" src="https://nicoddemus.github.io/static/pycharm/inspection.png"></p>
 <p>For some of the inspection results, you can also apply a suggested fix. For instance, from
 "Function call can be replaced with set literal" we can select the option to fix that:</p>
-<p><img alt="inspection-2" src="https://nicoddemus.github.io/static/pycharm/inspection-2.png" /></p>
+<p><img alt="inspection-2" src="https://nicoddemus.github.io/static/pycharm/inspection-2.png"></p>
 <p>PyCharm will then change this:</p>
-<div class="highlight"><pre>    <span class="n">extensions</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;.avi&#39;</span><span class="p">,</span> <span class="s1">&#39;.mp4&#39;</span><span class="p">,</span> <span class="s1">&#39;.mpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.mkv&#39;</span><span class="p">])</span>
+<div class="highlight"><pre><span></span>    <span class="n">extensions</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="s1">&#39;.avi&#39;</span><span class="p">,</span> <span class="s1">&#39;.mp4&#39;</span><span class="p">,</span> <span class="s1">&#39;.mpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.mkv&#39;</span><span class="p">])</span>
 </pre></div>
 
 
 <p>into this, automatically:</p>
-<div class="highlight"><pre>    <span class="n">extensions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;.avi&#39;</span><span class="p">,</span> <span class="s1">&#39;.mp4&#39;</span><span class="p">,</span> <span class="s1">&#39;.mpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.mkv&#39;</span><span class="p">}</span>
+<div class="highlight"><pre><span></span>    <span class="n">extensions</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;.avi&#39;</span><span class="p">,</span> <span class="s1">&#39;.mp4&#39;</span><span class="p">,</span> <span class="s1">&#39;.mpg&#39;</span><span class="p">,</span> <span class="s1">&#39;.mkv&#39;</span><span class="p">}</span>
 </pre></div>
 
 
@@ -102,13 +102,13 @@ yet.</p>
 <h1>Tooltips regarding obsolete code and improvements</h1>
 <p>PyCharm can inform you about obsolete constructs and suggest improvements in the code.</p>
 <p>For instance, I had code like this:</p>
-<div class="highlight"><pre><span class="k">with</span> <span class="n">nested</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filename1</span><span class="p">),</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename2</span><span class="p">))</span> <span class="k">as</span> <span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">nested</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">filename1</span><span class="p">),</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename2</span><span class="p">))</span> <span class="k">as</span> <span class="p">(</span><span class="n">f1</span><span class="p">,</span> <span class="n">f2</span><span class="p">):</span>
     <span class="o">&lt;</span><span class="n">snip</span><span class="o">&gt;</span>
 </pre></div>
 
 
 <p>PyCharm was displaying <code>nested</code> in strike-out:</p>
-<p><img alt="nested-obsolete" src="https://nicoddemus.github.io/static/pycharm/nested-obsolete.png" /></p>
+<p><img alt="nested-obsolete" src="https://nicoddemus.github.io/static/pycharm/nested-obsolete.png"></p>
 <p>I'm using Python 2.7, and in fact you should use the new syntax for nested context managers, but alas
 I have to support old versions of python in that code, so <code>nested</code> stays.</p>
 <p>The fact that PyCharm warned me about that was pretty cool.</p>
@@ -118,7 +118,7 @@ I have to support old versions of python in that code, so <code>nested</code> st
 (GitHub, Mantis, Jira, Bugzilla, etc). Also, when you start working a task, it asks if
 you would like to create a new feature branch for that task, with configurable
 branch name.</p>
-<p><img alt="nested-obsolete" src="https://nicoddemus.github.io/static/pycharm/task-branch.png" /></p>
+<p><img alt="nested-obsolete" src="https://nicoddemus.github.io/static/pycharm/task-branch.png"></p>
 <p>This avoids having to manually create a branch, which is a little tedious (having
 the task id on hand, choosing a name, etc).</p>
 <p>Bonus points.</p>
@@ -129,15 +129,15 @@ a file and Eclipse stops you from doing so because it is executing a background 
 <h1>Quick Documentation</h1>
 <p>When you have the cursor over a function/method/class whatever, you have the option to view "Quick Documentation".
 See it in action:</p>
-<p><img alt="quick-doc" src="https://nicoddemus.github.io/static/pycharm/quick-doc.png" /></p>
+<p><img alt="quick-doc" src="https://nicoddemus.github.io/static/pycharm/quick-doc.png"></p>
 <p>As you can see, it renders the docstring of the method in a nice looking format, plus it infers the parameter types
 from code usage... so even if the function doesn't have a docstring, you still get this:</p>
-<p><img alt="quick-doc-2" src="https://nicoddemus.github.io/static/pycharm/quick-doc-2.png" /></p>
+<p><img alt="quick-doc-2" src="https://nicoddemus.github.io/static/pycharm/quick-doc-2.png"></p>
 <p>Very nice!</p>
 <h1>Docutils Support</h1>
 <p>PyCharm includes first-class support for docutils, making it easy to re-generate the documentation directly from the IDE.</p>
 <p>On the plus side, it also includes a very nice ReST editor (much better than Eclipse IMHO):</p>
-<p><img alt="rst" src="https://nicoddemus.github.io/static/pycharm/rst.png" /></p>
+<p><img alt="rst" src="https://nicoddemus.github.io/static/pycharm/rst.png"></p>
 <h1>Sane Plugin System</h1>
 <p>In my experience, installing plugins in Eclipse is a pain:</p>
 <ul>
@@ -148,9 +148,9 @@ from code usage... so even if the function doesn't have a docstring, you still g
 </ul>
 <p>PyCharm plugin experience was <strong>much</strong> smoother.</p>
 <p>First, it is located where you would expect it: It is an item on "Settings":</p>
-<p><img alt="plugins" src="https://nicoddemus.github.io/static/pycharm/plugins.png" /></p>
+<p><img alt="plugins" src="https://nicoddemus.github.io/static/pycharm/plugins.png"></p>
 <p>You can easily browse for plugins directly from there:</p>
-<p><img alt="plugins-browse" src="https://nicoddemus.github.io/static/pycharm/plugins-browse.png" /></p>
+<p><img alt="plugins-browse" src="https://nicoddemus.github.io/static/pycharm/plugins-browse.png"></p>
 <p>I quickly installed a Markdown editor (as nice as ReST's), a pastebin plugin so that I can quickly create pastes directly
 from selected text, and CodeGlance, which gives a nice code overview similar to that of SublimeText.</p>
 <h1>Wrapping Up</h1>

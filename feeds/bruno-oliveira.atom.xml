@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Midnight Coding</title><link href="https://nicoddemus.github.io/" rel="alternate"></link><link href="https://nicoddemus.github.io/feeds/bruno-oliveira.atom.xml" rel="self"></link><id>https://nicoddemus.github.io/</id><updated>2016-02-13T00:00:00-02:00</updated><entry><title>Pytest 2016 sprint funding</title><link href="https://nicoddemus.github.io/articles/pytest-2016-sprint" rel="alternate"></link><updated>2016-02-13T00:00:00-02:00</updated><author><name>Bruno Oliveira</name></author><id>tag:nicoddemus.github.io,2016-02-13:articles/pytest-2016-sprint</id><summary type="html">&lt;h1&gt;Pytest Sprint 2016&lt;/h1&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Midnight Coding - Bruno Oliveira</title><link href="https://nicoddemus.github.io/" rel="alternate"></link><link href="https://nicoddemus.github.io/feeds/bruno-oliveira.atom.xml" rel="self"></link><id>https://nicoddemus.github.io/</id><updated>2016-02-13T00:00:00-02:00</updated><subtitle>Sleeping is for the weak</subtitle><entry><title>Pytest 2016 sprint funding</title><link href="https://nicoddemus.github.io/articles/pytest-2016-sprint" rel="alternate"></link><published>2016-02-13T00:00:00-02:00</published><updated>2016-02-13T00:00:00-02:00</updated><author><name>Bruno Oliveira</name></author><id>tag:nicoddemus.github.io,2016-02-13:/articles/pytest-2016-sprint</id><summary type="html">&lt;p&gt;Pytest 2016 sprint funding, how it will be and what to expect&lt;/p&gt;</summary><content type="html">&lt;h1&gt;Pytest Sprint 2016&lt;/h1&gt;
 &lt;p&gt;In June &lt;a href="https://github.com/pytest-dev/pytest"&gt;pytest&lt;/a&gt; core developers and users are gathering in Freiburg, Germany for
 a &lt;a href="http://pytest.org/latest/announce/sprint2016.html"&gt;sprint&lt;/a&gt;. This is being
 funded by a &lt;a href="https://www.indiegogo.com/projects/python-testing-sprint-mid-2016#"&gt;indiegogo campaign&lt;/a&gt;, so
@@ -91,7 +91,7 @@ in the issue tracker, contributing PRs and
 working on meta-improvements like moving the project to GitHub, 
 improving the release process, documentation, etc. &lt;/p&gt;
 &lt;p&gt;Pytest was created by such intelligent and friendly people, I'm really happy to 
-be able to work on it and be part of the community.&lt;/p&gt;</summary><category term="python"></category><category term="testing"></category><category term="pytest"></category></entry><entry><title>Things that surprised me in PyCharm</title><link href="https://nicoddemus.github.io/articles/pycharm" rel="alternate"></link><updated>2013-11-06T00:00:00-02:00</updated><author><name>Bruno Oliveira</name></author><id>tag:nicoddemus.github.io,2013-11-06:articles/pycharm</id><summary type="html">&lt;p&gt;I have been an &lt;a href="eclipse.org"&gt;Eclipse&lt;/a&gt; user for years now, using it to
+be able to work on it and be part of the community.&lt;/p&gt;</content><category term="python"></category><category term="testing"></category><category term="pytest"></category></entry><entry><title>Things that surprised me in PyCharm</title><link href="https://nicoddemus.github.io/articles/pycharm" rel="alternate"></link><published>2013-11-06T00:00:00-02:00</published><updated>2013-11-06T00:00:00-02:00</updated><author><name>Bruno Oliveira</name></author><id>tag:nicoddemus.github.io,2013-11-06:/articles/pycharm</id><summary type="html">&lt;p&gt;Things that surprised me in PyCharm as an Eclipse user&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have been an &lt;a href="eclipse.org"&gt;Eclipse&lt;/a&gt; user for years now, using it to
 write mostly Python (with &lt;a href="pydev.org"&gt;PyDev&lt;/a&gt;) and C++ (with &lt;a href="http://www.eclipse.org/cdt/"&gt;CDT&lt;/a&gt;).
 Recently I heard about &lt;a href="http://www.jetbrains.com/pycharm/"&gt;PyCharm&lt;/a&gt;
 and its new free community edition from a good friend of mine, &lt;a href="https://github.com/itghisi"&gt;Igor&lt;/a&gt;. He, also a long time Eclipse user,
@@ -106,31 +106,31 @@ while using PyCharm.&lt;/p&gt;
 &lt;p&gt;Also, keep in mind that this is my personal experience. Your mileage may vary.&lt;/p&gt;
 &lt;h1&gt;Real-time Diff&lt;/h1&gt;
 &lt;p&gt;PyCharm keeps track of the changes you are making in a file by displaying a blue marker on the left side of the editor:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="diff-1" src="https://nicoddemus.github.io/static/pycharm/diff-1.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="diff-1" src="https://nicoddemus.github.io/static/pycharm/diff-1.png"&gt;&lt;/p&gt;
 &lt;p&gt;This by itself is very handy, as I used to use the "Compare against HEAD" command all the time in Eclipse to see where I changed
 a file. In PyCharm you can with a glance see where your changes are.&lt;/p&gt;
 &lt;p&gt;Even more, clicking on the marker you are presented with the previous text and a toolbar:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="diff-2" src="https://nicoddemus.github.io/static/pycharm/diff-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="diff-2" src="https://nicoddemus.github.io/static/pycharm/diff-2.png"&gt;&lt;/p&gt;
 &lt;p&gt;You can easily select to rollback those changes, view the difference in a full fledged dialog or copy the previous text to the clipboard.&lt;/p&gt;
 &lt;h1&gt;Diff view while committing&lt;/h1&gt;
 &lt;p&gt;In Eclipse, when you commit you're shown a list of the files being committed
 in the commit dialog. You can double-click on any of them to obtain a side-by-side
 view of any of the changes:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="eclipse-commit-diff" src="https://nicoddemus.github.io/static/pycharm/eclipse-commit-diff.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="eclipse-commit-diff" src="https://nicoddemus.github.io/static/pycharm/eclipse-commit-diff.png"&gt;&lt;/p&gt;
 &lt;p&gt;Now, if you see something you like to change in the code (a misspelled word like the above, missing documentation
 you would like to add, etc.), too bad: you have to close everything
 (including the commit dialog with your nice commit message), go find the offending code and change it,
 and start again from scratch.&lt;/p&gt;
 &lt;p&gt;PyCharm has the same feature, but your changes are &lt;strong&gt;editable&lt;/strong&gt;. I can't stress enough how awesome is being able to
 modify it on spot.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="pycharm-commit-diff" src="https://nicoddemus.github.io/static/pycharm/pycharm-commit-diff.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="pycharm-commit-diff" src="https://nicoddemus.github.io/static/pycharm/pycharm-commit-diff.png"&gt;&lt;/p&gt;
 &lt;p&gt;I can fix the typo above easily during the commit process.&lt;/p&gt;
 &lt;p&gt;As another side bonus, if you for any reason close the commit dialog, it remembers the commit
 message you wrote already the next time you try to commit.&lt;/p&gt;
 &lt;h1&gt;Commit-Time Checks&lt;/h1&gt;
 &lt;p&gt;Still during commit, we have several options that can be executed before the actual commit, like
 "Optimizing Imports" (sort and remove unused), check for TODOs in the change-set, among others:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="commit" src="https://nicoddemus.github.io/static/pycharm/commit.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="commit" src="https://nicoddemus.github.io/static/pycharm/commit.png"&gt;&lt;/p&gt;
 &lt;p&gt;One interesting bit is the "Perform code analysis" option...&lt;/p&gt;
 &lt;h1&gt;Inspect Code&lt;/h1&gt;
 &lt;p&gt;You can ask PyCharm to perform a "Code Inspection" in a single file, directory, or entire projects. It will look for problems
@@ -138,17 +138,17 @@ and improvements in your code without actually executing it, like type checking,
 of code standards, etc. As explained in the previous section, this can also be
 done automatically on changed files during commit.&lt;/p&gt;
 &lt;p&gt;Here's the results of an inspection in a single file:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="inspection" src="https://nicoddemus.github.io/static/pycharm/inspection.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="inspection" src="https://nicoddemus.github.io/static/pycharm/inspection.png"&gt;&lt;/p&gt;
 &lt;p&gt;For some of the inspection results, you can also apply a suggested fix. For instance, from
 "Function call can be replaced with set literal" we can select the option to fix that:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="inspection-2" src="https://nicoddemus.github.io/static/pycharm/inspection-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="inspection-2" src="https://nicoddemus.github.io/static/pycharm/inspection-2.png"&gt;&lt;/p&gt;
 &lt;p&gt;PyCharm will then change this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="n"&gt;extensions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.avi&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.mp4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.mpg&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.mkv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;extensions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;set&lt;/span&gt;&lt;span class="p"&gt;([&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.avi&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.mp4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.mpg&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.mkv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;into this, automatically:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;    &lt;span class="n"&gt;extensions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.avi&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.mp4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.mpg&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.mkv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;    &lt;span class="n"&gt;extensions&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;.avi&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.mp4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.mpg&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;.mkv&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
@@ -163,13 +163,13 @@ yet.&lt;/p&gt;
 &lt;h1&gt;Tooltips regarding obsolete code and improvements&lt;/h1&gt;
 &lt;p&gt;PyCharm can inform you about obsolete constructs and suggest improvements in the code.&lt;/p&gt;
 &lt;p&gt;For instance, I had code like this:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;nested&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="n"&gt;nested&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename1&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;filename2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;f1&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;f2&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;snip&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;PyCharm was displaying &lt;code&gt;nested&lt;/code&gt; in strike-out:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="nested-obsolete" src="https://nicoddemus.github.io/static/pycharm/nested-obsolete.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="nested-obsolete" src="https://nicoddemus.github.io/static/pycharm/nested-obsolete.png"&gt;&lt;/p&gt;
 &lt;p&gt;I'm using Python 2.7, and in fact you should use the new syntax for nested context managers, but alas
 I have to support old versions of python in that code, so &lt;code&gt;nested&lt;/code&gt; stays.&lt;/p&gt;
 &lt;p&gt;The fact that PyCharm warned me about that was pretty cool.&lt;/p&gt;
@@ -179,7 +179,7 @@ I have to support old versions of python in that code, so &lt;code&gt;nested&lt;
 (GitHub, Mantis, Jira, Bugzilla, etc). Also, when you start working a task, it asks if
 you would like to create a new feature branch for that task, with configurable
 branch name.&lt;/p&gt;
-&lt;p&gt;&lt;img alt="nested-obsolete" src="https://nicoddemus.github.io/static/pycharm/task-branch.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="nested-obsolete" src="https://nicoddemus.github.io/static/pycharm/task-branch.png"&gt;&lt;/p&gt;
 &lt;p&gt;This avoids having to manually create a branch, which is a little tedious (having
 the task id on hand, choosing a name, etc).&lt;/p&gt;
 &lt;p&gt;Bonus points.&lt;/p&gt;
@@ -190,15 +190,15 @@ a file and Eclipse stops you from doing so because it is executing a background 
 &lt;h1&gt;Quick Documentation&lt;/h1&gt;
 &lt;p&gt;When you have the cursor over a function/method/class whatever, you have the option to view "Quick Documentation".
 See it in action:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="quick-doc" src="https://nicoddemus.github.io/static/pycharm/quick-doc.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="quick-doc" src="https://nicoddemus.github.io/static/pycharm/quick-doc.png"&gt;&lt;/p&gt;
 &lt;p&gt;As you can see, it renders the docstring of the method in a nice looking format, plus it infers the parameter types
 from code usage... so even if the function doesn't have a docstring, you still get this:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="quick-doc-2" src="https://nicoddemus.github.io/static/pycharm/quick-doc-2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="quick-doc-2" src="https://nicoddemus.github.io/static/pycharm/quick-doc-2.png"&gt;&lt;/p&gt;
 &lt;p&gt;Very nice!&lt;/p&gt;
 &lt;h1&gt;Docutils Support&lt;/h1&gt;
 &lt;p&gt;PyCharm includes first-class support for docutils, making it easy to re-generate the documentation directly from the IDE.&lt;/p&gt;
 &lt;p&gt;On the plus side, it also includes a very nice ReST editor (much better than Eclipse IMHO):&lt;/p&gt;
-&lt;p&gt;&lt;img alt="rst" src="https://nicoddemus.github.io/static/pycharm/rst.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="rst" src="https://nicoddemus.github.io/static/pycharm/rst.png"&gt;&lt;/p&gt;
 &lt;h1&gt;Sane Plugin System&lt;/h1&gt;
 &lt;p&gt;In my experience, installing plugins in Eclipse is a pain:&lt;/p&gt;
 &lt;ul&gt;
@@ -209,41 +209,41 @@ from code usage... so even if the function doesn't have a docstring, you still g
 &lt;/ul&gt;
 &lt;p&gt;PyCharm plugin experience was &lt;strong&gt;much&lt;/strong&gt; smoother.&lt;/p&gt;
 &lt;p&gt;First, it is located where you would expect it: It is an item on "Settings":&lt;/p&gt;
-&lt;p&gt;&lt;img alt="plugins" src="https://nicoddemus.github.io/static/pycharm/plugins.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="plugins" src="https://nicoddemus.github.io/static/pycharm/plugins.png"&gt;&lt;/p&gt;
 &lt;p&gt;You can easily browse for plugins directly from there:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="plugins-browse" src="https://nicoddemus.github.io/static/pycharm/plugins-browse.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="plugins-browse" src="https://nicoddemus.github.io/static/pycharm/plugins-browse.png"&gt;&lt;/p&gt;
 &lt;p&gt;I quickly installed a Markdown editor (as nice as ReST's), a pastebin plugin so that I can quickly create pastes directly
 from selected text, and CodeGlance, which gives a nice code overview similar to that of SublimeText.&lt;/p&gt;
 &lt;h1&gt;Wrapping Up&lt;/h1&gt;
 &lt;p&gt;That's it so far. I tried to list everything that I would show to my friends
 as "look how cool this is". I have been using PyCharm for very little time,
 so if I find more interesting things worth of another post I will write a
-continuation.&lt;/p&gt;</summary><category term="python"></category><category term="ide"></category></entry><entry><title>New blog! Now Pelican-powered.</title><link href="https://nicoddemus.github.io/articles/pelican" rel="alternate"></link><updated>2013-10-26T17:30:00-02:00</updated><author><name>Bruno Oliveira</name></author><id>tag:nicoddemus.github.io,2013-10-26:articles/pelican</id><summary type="html">&lt;p&gt;I have moved from &lt;a href="http://jekyllrb.com"&gt;Jekyll&lt;/a&gt; to &lt;a href="http://docs.getpelican.com"&gt;Pelican&lt;/a&gt; as bloggin framework.
+continuation.&lt;/p&gt;</content><category term="python"></category><category term="ide"></category></entry><entry><title>New blog! Now Pelican-powered.</title><link href="https://nicoddemus.github.io/articles/pelican" rel="alternate"></link><published>2013-10-26T17:30:00-02:00</published><updated>2013-10-26T17:30:00-02:00</updated><author><name>Bruno Oliveira</name></author><id>tag:nicoddemus.github.io,2013-10-26:/articles/pelican</id><summary type="html">&lt;p&gt;Moving the blog from Jekyll to Pelican&lt;/p&gt;</summary><content type="html">&lt;p&gt;I have moved from &lt;a href="http://jekyllrb.com"&gt;Jekyll&lt;/a&gt; to &lt;a href="http://docs.getpelican.com"&gt;Pelican&lt;/a&gt; as bloggin framework.
 I made the change because while I like Jekyll's style and configuration, it is written in Ruby and I didn't feel like
 learning the language just to customize the blog if I have to (if I learn Ruby, I rather it would be for cooler things).&lt;/p&gt;
 &lt;p&gt;Between the static generators available written in Python, Pelican seemed the best fit: mature, simple to configure and
 easy to customize.&lt;/p&gt;
-&lt;p&gt;Liking it so far. :)&lt;/p&gt;</summary><category term="general"></category></entry><entry><title>clik: framework for command-line applications</title><link href="https://nicoddemus.github.io/articles/clik" rel="alternate"></link><updated>2013-08-25T22:03:00-03:00</updated><author><name>Bruno Oliveira</name></author><id>tag:nicoddemus.github.io,2013-08-25:articles/clik</id><summary type="html">&lt;p&gt;While working on &lt;a href="https://github.com/nicoddemus/cit"&gt;cit&lt;/a&gt;, I decided that subcommand 
+&lt;p&gt;Liking it so far. :)&lt;/p&gt;</content><category term="general"></category></entry><entry><title>clik: framework for command-line applications</title><link href="https://nicoddemus.github.io/articles/clik" rel="alternate"></link><published>2013-08-25T22:03:00-03:00</published><updated>2013-08-25T22:03:00-03:00</updated><author><name>Bruno Oliveira</name></author><id>tag:nicoddemus.github.io,2013-08-25:/articles/clik</id><summary type="html">&lt;p&gt;Quick overview of a command-line application framework&lt;/p&gt;</summary><content type="html">&lt;p&gt;While working on &lt;a href="https://github.com/nicoddemus/cit"&gt;cit&lt;/a&gt;, I decided that subcommand 
 handling that was being done manually was too clumsy (specially after 
 &lt;a href="https://github.com/damianimc"&gt;Damiani&lt;/a&gt; went on a flurry and added a ton of new commands). 
 That's when I found out about this neat little
 framework for subcommand-style applications: &lt;a href="https://github.com/jds/clik"&gt;clik&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;You initially must construct an &lt;code&gt;App&lt;/code&gt; object:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;cit&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clik&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;App&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;cit&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;clik&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;App&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;
     &lt;span class="n"&gt;name&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;cit&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;
     &lt;span class="n"&gt;description&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Command line tool for interacting with a Jenkins integration server.&lt;/span&gt;&lt;span class="se"&gt;\n&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; 
 &lt;span class="p"&gt;)&lt;/span&gt; 
 
 &lt;span class="o"&gt;...&lt;/span&gt;
 
-&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="vm"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
     &lt;span class="n"&gt;cit&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;main&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;    
 &lt;/pre&gt;&lt;/div&gt;
 
 
 &lt;p&gt;Now with an app object on hand, you can use it as a decorator in any function you have, 
 which then exposes that function in the command line as a subcommand of your application:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@cit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;alias&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;fb.add&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;usage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;[branch]&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@cit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;alias&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;fb.add&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;usage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;[branch]&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;feature_branch_add&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;...&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
      &lt;span class="sd"&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
 &lt;span class="sd"&gt;    Create/Update jobs associated with the current git branch.&lt;/span&gt;
@@ -258,7 +258,7 @@ which then exposes that function in the command line as a subcommand of your app
 (&lt;code&gt;feature_branch_add&lt;/code&gt; is too long to type in the command line). The docstring is also parsed and
 the first line is used as a "short help", while the rest is displayed when asking for more
 detailed help for a command:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;$ cit
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;$ cit
 cit -- Command line tool &lt;span class="k"&gt;for&lt;/span&gt; interacting with a Jenkins integration server.
 
 Basic usage: cit &amp;lt;subcommand&amp;gt; &lt;span class="o"&gt;[&lt;/span&gt;options&lt;span class="o"&gt;]&lt;/span&gt;
@@ -303,7 +303,7 @@ subcommands can receive:&lt;/p&gt;
 &lt;li&gt;&lt;code&gt;branch&lt;/code&gt; : current git branch.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Here's &lt;code&gt;fb.rm&lt;/code&gt; making use of the custom parameters:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nd"&gt;@cit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;alias&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;fb.rm&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;usage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;[branch]&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nd"&gt;@cit&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;alias&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;fb.rm&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;usage&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;[branch]&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
 &lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;feature_branch_rm&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;branch&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;global_config&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
     &lt;span class="sd"&gt;&amp;#39;&amp;#39;&amp;#39;&lt;/span&gt;
 &lt;span class="sd"&gt;    Remove jobs associated with the current git branch.&lt;/span&gt;
@@ -314,4 +314,4 @@ subcommands can receive:&lt;/p&gt;
 &lt;p&gt;All in all, &lt;code&gt;clik&lt;/code&gt; is a neat little library that greatly helps having to write a lot of 
 boilerplate code for command line handling. Highly recommended!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: the above code is in a branch &lt;code&gt;better-command-line-handling&lt;/code&gt;... it will
-be integrated in &lt;code&gt;master&lt;/code&gt; this week (I think).&lt;/p&gt;</summary><category term="command-line"></category><category term="python"></category><category term="script"></category></entry></feed>
+be integrated in &lt;code&gt;master&lt;/code&gt; this week (I think).&lt;/p&gt;</content><category term="command-line"></category><category term="python"></category><category term="script"></category></entry></feed>
