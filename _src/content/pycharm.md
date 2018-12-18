@@ -27,14 +27,14 @@ Also, keep in mind that this is my personal experience. Your mileage may vary.
 
 PyCharm keeps track of the changes you are making in a file by displaying a blue marker on the left side of the editor:
 
-![diff-1]({filename}static/pycharm/diff-1.png)
+![diff-1]({static}static/pycharm/diff-1.png)
 
 This by itself is very handy, as I used to use the "Compare against HEAD" command all the time in Eclipse to see where I changed
 a file. In PyCharm you can with a glance see where your changes are.
 
 Even more, clicking on the marker you are presented with the previous text and a toolbar:
 
-![diff-2]({filename}static/pycharm/diff-2.png)
+![diff-2]({static}static/pycharm/diff-2.png)
 
 You can easily select to rollback those changes, view the difference in a full fledged dialog or copy the previous text to the clipboard.
 
@@ -44,7 +44,7 @@ In Eclipse, when you commit you're shown a list of the files being committed
 in the commit dialog. You can double-click on any of them to obtain a side-by-side
 view of any of the changes:
 
-![eclipse-commit-diff]({filename}static/pycharm/eclipse-commit-diff.png)
+![eclipse-commit-diff]({static}static/pycharm/eclipse-commit-diff.png)
 
 Now, if you see something you like to change in the code (a misspelled word like the above, missing documentation
 you would like to add, etc.), too bad: you have to close everything
@@ -54,7 +54,7 @@ and start again from scratch.
 PyCharm has the same feature, but your changes are **editable**. I can't stress enough how awesome is being able to
 modify it on spot.
 
-![pycharm-commit-diff]({filename}static/pycharm/pycharm-commit-diff.png)
+![pycharm-commit-diff]({static}static/pycharm/pycharm-commit-diff.png)
 
 I can fix the typo above easily during the commit process.
 
@@ -66,7 +66,7 @@ message you wrote already the next time you try to commit.
 Still during commit, we have several options that can be executed before the actual commit, like
 "Optimizing Imports" (sort and remove unused), check for TODOs in the change-set, among others:
 
-![commit]({filename}static/pycharm/commit.png)
+![commit]({static}static/pycharm/commit.png)
 
 One interesting bit is the "Perform code analysis" option...
 
@@ -79,12 +79,12 @@ done automatically on changed files during commit.
 
 Here's the results of an inspection in a single file:
 
-![inspection]({filename}static/pycharm/inspection.png)
+![inspection]({static}static/pycharm/inspection.png)
 
 For some of the inspection results, you can also apply a suggested fix. For instance, from
 "Function call can be replaced with set literal" we can select the option to fix that:
 
-![inspection-2]({filename}static/pycharm/inspection-2.png)
+![inspection-2]({static}static/pycharm/inspection-2.png)
 
 PyCharm will then change this:
 
@@ -124,7 +124,7 @@ with nested(open(filename1), open(filename2)) as (f1, f2):
 
 PyCharm was displaying `nested` in strike-out:
 
-![nested-obsolete]({filename}static/pycharm/nested-obsolete.png)
+![nested-obsolete]({static}static/pycharm/nested-obsolete.png)
 
 I'm using Python 2.7, and in fact you should use the new syntax for nested context managers, but alas
 I have to support old versions of python in that code, so `nested` stays.
@@ -141,7 +141,7 @@ PyCharm however comes out of the box with a ton of connectors available
 you would like to create a new feature branch for that task, with configurable
 branch name.
 
-![nested-obsolete]({filename}static/pycharm/task-branch.png)
+![nested-obsolete]({static}static/pycharm/task-branch.png)
 
 This avoids having to manually create a branch, which is a little tedious (having
 the task id on hand, choosing a name, etc).
@@ -159,12 +159,12 @@ a file and Eclipse stops you from doing so because it is executing a background 
 When you have the cursor over a function/method/class whatever, you have the option to view "Quick Documentation".
 See it in action:
 
-![quick-doc]({filename}static/pycharm/quick-doc.png)
+![quick-doc]({static}static/pycharm/quick-doc.png)
 
 As you can see, it renders the docstring of the method in a nice looking format, plus it infers the parameter types
 from code usage... so even if the function doesn't have a docstring, you still get this:
 
-![quick-doc-2]({filename}static/pycharm/quick-doc-2.png)
+![quick-doc-2]({static}static/pycharm/quick-doc-2.png)
 
 Very nice!
 
@@ -174,7 +174,7 @@ PyCharm includes first-class support for docutils, making it easy to re-generate
 
 On the plus side, it also includes a very nice ReST editor (much better than Eclipse IMHO):
 
-![rst]({filename}static/pycharm/rst.png)
+![rst]({static}static/pycharm/rst.png)
 
 
 # Sane Plugin System #
@@ -190,11 +190,11 @@ PyCharm plugin experience was **much** smoother.
 
 First, it is located where you would expect it: It is an item on "Settings":
 
-![plugins]({filename}static/pycharm/plugins.png)
+![plugins]({static}static/pycharm/plugins.png)
 
 You can easily browse for plugins directly from there:
 
-![plugins-browse]({filename}static/pycharm/plugins-browse.png)
+![plugins-browse]({static}static/pycharm/plugins-browse.png)
 
 I quickly installed a Markdown editor (as nice as ReST's), a pastebin plugin so that I can quickly create pastes directly
 from selected text, and CodeGlance, which gives a nice code overview similar to that of SublimeText.
